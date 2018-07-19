@@ -1,0 +1,231 @@
+object.resize-trigger {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+.clickable {
+  cursor: pointer;
+}
+.icon.triangle-left {
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: calc(10px / 2) 10px calc(10px / 2) 0;
+  border-color: transparent #666 transparent transparent;
+}
+.icon.triangle-right {
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: calc(10px / 2) 0 calc(10px / 2) 10px;
+  border-color: transparent transparent transparent #666;
+}
+.icon.triangle-up {
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0 calc(10px / 2) 10px calc(10px / 2);
+  border-color: transparent transparent #666 transparent;
+}
+.icon.triangle-down {
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 10px calc(10px / 2) 0 calc(10px / 2);
+  border-color: #666 transparent transparent transparent;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-container .flex-grow {
+  flex: 1;
+}
+.flex-container.flex-vertical {
+  flex-direction: column;
+}
+.slide-container .slide-item {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.slide-container .slide-item .slide-title {
+  display: none;
+}
+.slide-container .slide-item.active {
+  display: unset;
+}
+.divider-horizontal {
+  width: 100%;
+  height: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.bold {
+  font-weight: bold;
+}
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+ul {
+  padding-left: 20px;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-size: 10pt;
+  font-family: sans-serif;
+  text-anchor: middle;
+}
+.draggable {
+  user-select: none;
+}
+.fill-horizontal {
+  width: 100%;
+}
+.fill-vertical {
+  height: 100%;
+}
+.scalable {
+  min-width: 9px;
+  min-height: 9px;
+}
+.scalable .scalable-corner {
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0 0 9px 9px;
+  border-color: transparent transparent #666 transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  user-select: none;
+}
+#score {
+  width: 100%;
+  height: 100%;
+}
+#score path.line {
+  fill: none;
+  stroke: #4682b4;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+  stroke-width: 1.5;
+}
+#score .x-axis .tick line,
+#score .y-axis .tick line {
+  stroke: #808080;
+  stroke-opacity: 0.5;
+}
+#darts {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#darts .r-axis circle.scale,
+#darts .r-axis circle.unit,
+#darts .t-axis line {
+  fill: none;
+  stroke: #aaa;
+  stroke-width: 1;
+  stroke-dasharray: 5, 7;
+}
+#darts .r-axis circle.unit {
+  stroke: #4682b4;
+  stroke-dasharray: none;
+}
+#darts .r-axis text {
+  font-size: 8pt;
+  transform: rotate(-15deg);
+  text-anchor: middle;
+}
+#darts .t-axis line {
+  stroke-dasharray: 3, 5;
+}
+#darts .poles polygon {
+  fill: #dc143c;
+  cursor: move;
+}
+#darts .poles polygon:active {
+  cursor: none;
+}
+#darts .zeros circle {
+  fill: #32cd32;
+  cursor: move;
+}
+#darts .zeros circle:active {
+  cursor: none;
+}
+#floaty {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 300px;
+  width: 300px;
+  min-height: 150px;
+  min-width: 150px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgba(255,255,255,0.7);
+}
+#floaty .draggable.fill-horizontal {
+  background-color: #ddd;
+}
+#floaty .slide-container {
+  overflow-y: hidden;
+}
+#floaty #poles ul,
+#floaty #zeros ul {
+  padding-right: 10px;
+}
+#floaty #poles ul li,
+#floaty #zeros ul li {
+  width: 100%;
+}
+#floaty #poles ul li input,
+#floaty #zeros ul li input {
+  box-sizing: border-box;
+  width: 100%;
+}
+#floaty #poles,
+#floaty #zeros,
+#floaty #options {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+#floaty #options label {
+  display: inline-block;
+}
+#floaty #options textarea {
+  resize: vertical;
+}
+#floaty #options textarea,
+#floaty #options input[type='text'],
+#floaty #options input[type='number'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
